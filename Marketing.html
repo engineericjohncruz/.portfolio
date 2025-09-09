@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search Engine Optimization — Eric John N. Cruz</title>
+  <meta name="description" content="Search engine optimization project details by Eric John N. Cruz.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#141a20;--card:#151b24;--text:#e6edf3;--muted:#9da7b3;--accent:#7c5cff;--accent2:#22d3ee;--chip:#232a33}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1200px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.7);backdrop-filter:saturate(160%) blur(6px);border-bottom:1px solid #222}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-family:Montserrat}
+    .brand .dot{width:10px;height:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%}
+    .navlinks{display:flex;gap:18px;flex-wrap:wrap}
+    .navlinks a{display:inline-flex;align-items:center;line-height:1;font-weight:600;color:var(--text);opacity:.9}
+    .navlinks a:hover{opacity:1}
+    .cta{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;font-weight:700;padding:10px 22px;border-radius:999px;line-height:1.2;display:inline-flex;align-items:center}
+    main section{padding:28px 0}
+    .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+    .section-title h2{margin:0;font-family:Montserrat;font-weight:800;font-size:clamp(20px,2.8vw,26px)}
+    .card{background:var(--card);border:1px solid #262e38;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    @media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.navlinks{display:none}.grid{grid-template-columns:1fr}}
+    .muted{color:var(--muted)}
+    .list{margin:0 0 0 16px;padding:0}
+    .list li{margin:6px 0}
+    .breadcrumb{margin-top:8px;color:var(--muted);font-size:14px}
+    footer{border-top:1px solid #20262f;margin-top:28px;padding:24px 0;color:var(--muted);text-align:center}
+    /* only style direct images placed in cards, not carousel images */
+    .card > img {width: 100%; border-radius: 8px; margin-bottom: 10px;}
+/* Carousel shell */
+.carousel{
+  --bg-url: none;   /* JS will update this to the current img src */
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+  margin:12px 0 14px;
+  background:#0f1520;
+}
+
+/* blurred copy of current slide */
+.carousel::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image: var(--bg-url);
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px) saturate(1.1);
+  transform: scale(1.08);        /* enlarge so blur edges don't show */
+  opacity:.4;                    /* adjust strength */
+  z-index:0;
+  pointer-events:none;
+}
+
+/* all content floats above blur */
+.carousel .track,
+.carousel .nav,
+.carousel .dots{
+  position:relative;
+  z-index:1;
+}
+
+/* Slides */
+.carousel .track{
+  display:flex;
+  transition:transform .4s ease;
+}
+.carousel .track > *{ flex:0 0 100%; }
+.carousel .slide{
+  display:flex; justify-content:center; align-items:center;
+  padding:8px;
+}
+.carousel .slide img{
+  max-width:100%;
+  max-height:65vh;       /* keeps image from being too tall */
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  border-radius:6px;
+  display:block;
+}
+
+/* Nav buttons on top of blur */
+.carousel .nav{
+  position:absolute; top:50%;
+  transform:translateY(-50%);
+  width:44px; height:44px;
+  border:0; border-radius:50%;
+  background:rgba(121, 85, 85, 0.18);
+  backdrop-filter: blur(6px);
+  color:#000000;
+  font-size:26px;
+  cursor:pointer;
+  z-index:2;
+}
+.carousel .prev{ left:12px; }
+.carousel .next{ right:12px; }
+.carousel .nav:hover{ background:rgb(157, 144, 144); }
+
+/* Dots */
+.carousel .dots{
+  position:absolute; bottom:12px; left:0; right:0;
+  display:flex; justify-content:center; gap:8px;
+  z-index:2;
+}
+.carousel .dots button{
+  width:10px; height:10px; border-radius:50%;
+  border:0; background:rgb(0, 0, 0);
+  cursor:pointer;
+}
+.carousel .dots button.active{ background:#fff; }
+
+/* layering: blur < track < dots < nav */
+.carousel .track{ position:relative; z-index:0; }
+.carousel .dots{ position:relative; z-index:2; }
+.carousel .nav{ position:absolute; z-index:3; }  /* sits above */
+
+/* --- Fix squeezed dots --- */
+.carousel .dots{
+  position:absolute; left:0; right:0; bottom:12px;
+  display:flex; justify-content:center; gap:10px; align-items:center;
+  height:18px;                 /* gives them vertical room */
+}
+
+.carousel .dots button{
+  flex:0 0 auto;               /* never stretch */
+  inline-size:12px;            /* width */
+  aspect-ratio:1 / 1;          /* keeps it perfectly square */
+  block-size:auto;             /* height from aspect-ratio */
+  border-radius:50%;
+  border:0; padding:0; margin:0;
+  line-height:0;               /* prevent text metrics from squeezing */
+  background:rgba(46, 40, 40, 0.391);
+  cursor:pointer;
+}
+.carousel .dots button.active{ background:#0499d8; }
+
+/* If any global rule targets buttons, force these to be circles */
+.carousel .dots button::before{ content:none !important; }
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown .dropbtn {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text);
+  padding: 8px 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: var(--card);
+  border: 1px solid #262e38;
+  border-radius: 8px;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,.2);
+  z-index: 100;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background: var(--chip);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Fix dropdown alignment */
+.dropdown {
+  position: relative;
+  display: inline-flex; /* inline-flex instead of inline-block */
+  align-items: center;  /* vertically align with other nav items */
+}
+
+.dropdown .dropbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1;
+  padding: 0; /* remove extra padding */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* align directly under "Projects" */
+  left: 0;
+  background: var(--card);
+  border: 1px solid #262e38;
+  border-radius: 8px;
+  min-width: 180px;
+  box-shadow: 0 8px 16px rgba(0,0,0,.2);
+  z-index: 100;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px 14px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.dropdown-content a:hover {
+  background: var(--chip);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand"><span class="dot"></span><span>Eric John N. Cruz</span></div>
+        <div class="navlinks">
+          <a href="index.html#about">About</a>
+          <a href="index.html#skills">Services</a>
+          <a href="index.html#experience">Experience</a>
+  <div class="dropdown">
+    <a href="#projects" class="dropbtn">Projects ▾</a>
+    <div class="dropdown-content">
+      <a href="Engineering.html">Engineering</a>
+      <a href="Marketing.html">Marketing</a>
+      <a href="Programming.html">Programming</a>
+    </div>
+  </div>
+          <a href="index.html#tools">Tools</a>
+          <a href="index.html#education">Education</a>
+          <a href="index.html#certs">Licenses</a>
+          <a href="index.html#contact" class="cta">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb"><a href="index.html#projects">← Back to Projects</a></div>
+
+    <section>
+      <div class="section-title"><h2>Search Engine Optimization</h2></div>
+      <div class="card">
+        <p class="muted">Helping businesses grow by boosting online visibility and engagement.</p>
+        <ul class="list">
+          <li>Strengthen brand authority through citations, backlinks, and PR that improve search rankings.</li>
+          <li>Drive customer connections with tailored email campaigns that convert.</li>
+          <li>Keep websites relevant and competitive with consistent content updates and performance reviews.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title"><h2>Samples</h2></div>
+        <article class="card">
+          <h3>Keyword Research & SEO Strategy</h3>
+            <!-- Carousel -->
+              <div class="carousel" data-carousel>
+                <button class="nav prev" aria-label="Previous image" data-prev>&lsaquo;</button>
+                  <div class="track" data-track>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20Table.png" alt="Keyword Research sample 1"></div>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Categorization%20Pie%20Chart.png" alt="Keyword Research sample 2"></div>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Categorization%20Table.png" alt="Keyword Research sample 3"></div>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Search%20Trends%20or%20Competitive%20Insight%201.jpg" alt="Keyword Research sample 4"></div>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Search%20Trends%20or%20Competitive%20Insight%202.jpg" alt="Keyword Research sample 5"></div>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Workflow%20Snapshot%201.jpg" alt="Keyword Research sample 6"></div>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Workflow%20Snapshot%202.jpg" alt="Keyword Research sample 7"></div>
+                  </div>
+                <button class="nav next" aria-label="Next image" data-next>&rsaquo;</button>
+                <div class="dots" data-dots></div>
+              </div>
+          <p class="muted">I specialize in identifying high-value keywords that balance search volume, difficulty, and relevance to the client’s goals. By analyzing data from tools like Ubersuggest, I build structured keyword lists and categorize them into primary, supporting, and local segments to drive both organic visibility and targeted traffic.</p>
+            <p class="muted">Data-Driven Insights – I extract, clean, and organize keyword data into actionable lists with search volume, difficulty, and location.</p>
+            <p class="muted">Strategic Categorization – I classify keywords into core business terms, supporting content opportunities, and local/geo-focused phrases, ensuring a full-funnel SEO approach.</p>
+            <p class="muted">Trend & Competitor Analysis – I track search trends over time and analyze competitors’ rankings to uncover gaps and opportunities.</p>
+            <p class="muted">Result-Oriented Planning – My research directly informs content strategy, link-building, and campaign planning, helping brands rank for terms that bring real traffic and conversions.</p>
+        </article>
+    </section>
+    
+    <section>
+        <article class="card">
+          <h3>Data Researching for Content</h3>
+            <!-- Carousel -->
+              <div class="carousel" data-carousel>
+                <button class="nav prev" aria-label="Previous image" data-prev>&lsaquo;</button>
+                  <div class="track" data-track>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Basecamp%20project%20profile..png" alt="Basecamp project profile"></div>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Audience%20Identification.png" alt="sample work 1"></div>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Screenshot%20of%20structured%20ChatGPT%20prompt%20%2B%20sample%20output%201.png" alt="sample work 2"></div>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Screenshot%20of%20structured%20ChatGPT%20prompt%20%2B%20sample%20output%202.png" alt="sample work 3"></div>
+                  </div>
+                <button class="nav next" aria-label="Next image" data-next>&rsaquo;</button>
+                <div class="dots" data-dots></div>
+              </div>
+              <p class="muted">Validated, data-driven facts form the foundation for stronger content creation, helping businesses establish credibility, improve SEO visibility, and provide content teams with ready-to-use insights. This process ensures research is SEO-aligned, content remains relatable to the target audience, facts are reliable and numerical, and raw data is efficiently transformed into ready-to-publish assets.</p>
+        </article>
+    </section>
+
+    <section>
+        <article class="card">
+          <h3>Content Creation for SEO Campaigns</h3>
+            <!-- Carousel -->
+              <div class="carousel" data-carousel>
+                <button class="nav prev" aria-label="Previous image" data-prev>&lsaquo;</button>
+                  <div class="track" data-track>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Workflow%20Diagram%20%20Process%20Flow.png" alt="Workflow Diagram Process Flow.png"></div>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Final%20Content%20Snapshot%20(2).png" alt="Final Content Snapshot (2).png"></div>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Final%20Content%20Snapshot.png" alt="Final Content Snapshot.png"></div>
+                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Workflow%20Diagram%20%20Process%20Flow%202.png" alt="Workflow Diagram Process Flow 2.png"></div>
+                  </div>
+                <button class="nav next" aria-label="Next image" data-next>&rsaquo;</button>
+                <div class="dots" data-dots></div>
+              </div>
+          <p class="muted">I help businesses boost SEO performance by creating keyword-focused, credible content that improves visibility and engagement. Using structured research, keyword tools, and AI-driven drafting, I streamline the entire process from onboarding research and template preparation to keyword checks, AI prompting, review, and finalization so content is optimized, polished, and ready to publish.</p>
+        </article>
+    </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div>© 2025 Eric John N. Cruz</div>
+      <div style="margin-top:6px">Coded from scratch using HTML, CSS, and JavaScript.</div>
+    </div>
+  </footer>
+
+<script>
+(function(){
+  const carousels = document.querySelectorAll('[data-carousel]');
+  carousels.forEach(initCarousel);
+
+  function initCarousel(root){
+    const track   = root.querySelector('[data-track]');
+    const slides  = Array.from(track.children);   // .slide elements
+    const prev    = root.querySelector('[data-prev]');
+    const next    = root.querySelector('[data-next]');
+    const dotsWrap= root.querySelector('[data-dots]');
+    let index = 0, startX = 0, deltaX = 0;
+
+    // Build dots
+    slides.forEach((_, i)=>{
+      const b = document.createElement('button');
+      b.setAttribute('aria-label', 'Go to slide ' + (i+1));
+      b.addEventListener('click', ()=>go(i));
+      dotsWrap.appendChild(b);
+    });
+
+    // Set the blurred background to the current slide image
+    function setBg(){
+      const img = slides[index].querySelector('img') || slides[index];
+      const url = img && img.getAttribute('src');
+      if (url) root.style.setProperty('--bg-url', `url("${url}")`);
+    }
+
+    function update(){
+      track.style.transform = `translateX(-${index*100}%)`;
+      // dots
+      const dots = [...dotsWrap.children];
+      dots.forEach((d,i)=>d.classList.toggle('active', i===index));
+      // blur background
+      setBg();
+    }
+
+    function go(i){
+      index = (i + slides.length) % slides.length;
+      update();
+    }
+
+    prev.addEventListener('click', ()=>go(index-1));
+    next.addEventListener('click', ()=>go(index+1));
+
+    // Touch swipe
+    track.addEventListener('touchstart', e=>{ startX = e.touches[0].clientX; deltaX = 0; }, {passive:true});
+    track.addEventListener('touchmove',  e=>{ deltaX = e.touches[0].clientX - startX; }, {passive:true});
+    track.addEventListener('touchend',   ()=>{
+      if (Math.abs(deltaX) > 40) deltaX < 0 ? go(index+1) : go(index-1);
+      deltaX = 0;
+    });
+
+    window.addEventListener('resize', update);
+
+    // init
+    if (dotsWrap.firstElementChild) dotsWrap.firstElementChild.classList.add('active');
+    update();
+  }
+})();
+</script>
+
+</body>
+</html>
