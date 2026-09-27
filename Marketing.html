@@ -3,411 +3,243 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Search Engine Optimization — Eric John N. Cruz</title>
-  <meta name="description" content="Search engine optimization project details by Eric John N. Cruz.">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>SEO & Digital Operations Portfolio — Eric John N. Cruz</title>
+  <meta name="description" content="SEO and digital operations portfolio of Eric John N. Cruz, including real workflow samples and the live IslaClean Palawan independent SEO practice project.">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#141a20;--card:#151b24;--text:#e6edf3;--muted:#9da7b3;--accent:#7c5cff;--accent2:#22d3ee;--chip:#232a33}
+    :root{
+      --bg:#0e1620;--card:#14202b;--card2:#172733;--text:#eef4f6;--muted:#aab8c2;
+      --navy:#1f4d68;--green:#4bb597;--green2:#8fd6c3;--cream:#f5efe4;--blue:#6fb4d4;
+      --line:#263846;--accent:#8fd6c3;
+    }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;line-height:1.6}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Poppins,system-ui,sans-serif;line-height:1.65}
     a{color:var(--accent);text-decoration:none}
     a:hover{text-decoration:underline}
-    .container{max-width:1200px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;z-index:50;background:rgba(13,17,23,.7);backdrop-filter:saturate(160%) blur(6px);border-bottom:1px solid #222}
-    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-family:Montserrat}
-    .brand .dot{width:10px;height:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%}
-    .navlinks{display:flex;gap:18px;flex-wrap:wrap}
-    .navlinks a{display:inline-flex;align-items:center;line-height:1;font-weight:600;color:var(--text);opacity:.9}
-    .navlinks a:hover{opacity:1}
-    .cta{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;font-weight:700;padding:10px 22px;border-radius:999px;line-height:1.2;display:inline-flex;align-items:center}
-    main section{padding:28px 0}
-    .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
-    .section-title h2{margin:0;font-family:Montserrat;font-weight:800;font-size:clamp(20px,2.8vw,26px)}
-    .card{background:var(--card);border:1px solid #262e38;border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;box-shadow:0 10px 24px rgba(0,0,0,.18)}
+    .container{max-width:1160px;margin:auto;padding:24px}
+    header{position:sticky;top:0;z-index:20;background:rgba(14,22,32,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;font:800 15px Montserrat}
+    .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--blue))}
+    .navlinks{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+    .navlinks a{color:var(--text);font-weight:600;font-size:14px}
+    .cta{background:var(--green);color:#071611!important;padding:10px 16px;border-radius:999px}
+    .hero{padding:70px 0 42px}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+    .eyebrow{display:inline-flex;padding:7px 11px;border-radius:999px;background:rgba(75,181,151,.12);border:1px solid rgba(75,181,151,.3);color:var(--green2);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    h1,h2,h3{font-family:Montserrat,sans-serif;line-height:1.15;letter-spacing:-.02em}
+    h1{font-size:clamp(42px,6vw,68px);margin:18px 0 16px}
+    h2{font-size:clamp(28px,4vw,42px);margin:0 0 14px}
+    h3{font-size:20px;margin:0 0 8px}
+    .lead{font-size:18px;color:var(--muted);max-width:66ch}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:999px;padding:11px 16px;font-weight:700;color:var(--text);background:var(--card)}
+    .btn.primary{background:var(--green);color:#071611;border-color:var(--green)}
+    .btn:hover{text-decoration:none;transform:translateY(-1px)}
+    .hero-card,.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 18px 42px rgba(0,0,0,.18)}
+    .hero-card{background:linear-gradient(145deg,#17303b,#13212b)}
+    .hero-card ul,.list{padding-left:20px;margin:12px 0 0}
+    .hero-card li,.list li{margin:8px 0;color:var(--muted)}
+    section{padding:44px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:22px}
+    .section-head p{color:var(--muted);max-width:58ch;margin:0}
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    @media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:640px){.navlinks{display:none}.grid{grid-template-columns:1fr}}
+    .grid.two{grid-template-columns:repeat(2,1fr)}
+    .card p{color:var(--muted)}
+    .pill{display:inline-flex;padding:5px 9px;border-radius:999px;background:#203541;color:var(--green2);font-size:12px;font-weight:700}
+    .case{background:linear-gradient(135deg,#f5efe4,#eaf4f0);color:#162631;border-radius:28px;padding:30px}
+    .case h2,.case h3{color:#123047}
+    .case p,.case li{color:#52616b}
+    .case-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
+    .case .btn{background:#fff;color:#17303b;border-color:#d7e1dc}
+    .case .btn.primary{background:#1f6f5c;color:#fff;border-color:#1f6f5c}
+    .proof{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .proof div{background:rgba(255,255,255,.7);border:1px solid #d8e1dd;border-radius:16px;padding:14px}
+    .proof strong{display:block;color:#123047}
     .muted{color:var(--muted)}
-    .list{margin:0 0 0 16px;padding:0}
-    .list li{margin:6px 0}
-    .breadcrumb{margin-top:8px;color:var(--muted);font-size:14px}
-    footer{border-top:1px solid #20262f;margin-top:28px;padding:24px 0;color:var(--muted);text-align:center}
-    /* only style direct images placed in cards, not carousel images */
-    .card > img {width: 100%; border-radius: 8px; margin-bottom: 10px;}
-/* Carousel shell */
-.carousel{
-  --bg-url: none;   /* JS will update this to the current img src */
-  position:relative;
-  overflow:hidden;
-  border-radius:12px;
-  margin:12px 0 14px;
-  background:#0f1520;
-}
-
-/* blurred copy of current slide */
-.carousel::before{
-  content:"";
-  position:absolute; inset:0;
-  background-image: var(--bg-url);
-  background-size: cover;
-  background-position: center;
-  filter: blur(20px) saturate(1.1);
-  transform: scale(1.08);        /* enlarge so blur edges don't show */
-  opacity:.4;                    /* adjust strength */
-  z-index:0;
-  pointer-events:none;
-}
-
-/* all content floats above blur */
-.carousel .track,
-.carousel .nav,
-.carousel .dots{
-  position:relative;
-  z-index:1;
-}
-
-/* Slides */
-.carousel .track{
-  display:flex;
-  transition:transform .4s ease;
-}
-.carousel .track > *{ flex:0 0 100%; }
-.carousel .slide{
-  display:flex; justify-content:center; align-items:center;
-  padding:8px;
-}
-.carousel .slide img{
-  max-width:100%;
-  max-height:65vh;       /* keeps image from being too tall */
-  width:auto;
-  height:auto;
-  object-fit:contain;
-  border-radius:6px;
-  display:block;
-}
-
-/* Nav buttons on top of blur */
-.carousel .nav{
-  position:absolute; top:50%;
-  transform:translateY(-50%);
-  width:44px; height:44px;
-  border:0; border-radius:50%;
-  background:rgba(121, 85, 85, 0.18);
-  backdrop-filter: blur(6px);
-  color:#000000;
-  font-size:26px;
-  cursor:pointer;
-  z-index:2;
-}
-.carousel .prev{ left:12px; }
-.carousel .next{ right:12px; }
-.carousel .nav:hover{ background:rgb(157, 144, 144); }
-
-/* Dots */
-.carousel .dots{
-  position:absolute; bottom:12px; left:0; right:0;
-  display:flex; justify-content:center; gap:8px;
-  z-index:2;
-}
-.carousel .dots button{
-  width:10px; height:10px; border-radius:50%;
-  border:0; background:rgb(0, 0, 0);
-  cursor:pointer;
-}
-.carousel .dots button.active{ background:#fff; }
-
-/* layering: blur < track < dots < nav */
-.carousel .track{ position:relative; z-index:0; }
-.carousel .dots{ position:relative; z-index:2; }
-.carousel .nav{ position:absolute; z-index:3; }  /* sits above */
-
-/* --- Fix squeezed dots --- */
-.carousel .dots{
-  position:absolute; left:0; right:0; bottom:12px;
-  display:flex; justify-content:center; gap:10px; align-items:center;
-  height:18px;                 /* gives them vertical room */
-}
-
-.carousel .dots button{
-  flex:0 0 auto;               /* never stretch */
-  inline-size:12px;            /* width */
-  aspect-ratio:1 / 1;          /* keeps it perfectly square */
-  block-size:auto;             /* height from aspect-ratio */
-  border-radius:50%;
-  border:0; padding:0; margin:0;
-  line-height:0;               /* prevent text metrics from squeezing */
-  background:rgba(46, 40, 40, 0.391);
-  cursor:pointer;
-}
-.carousel .dots button.active{ background:#0499d8; }
-
-/* If any global rule targets buttons, force these to be circles */
-.carousel .dots button::before{ content:none !important; }
-
-/* Dropdown */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown .dropbtn {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--text);
-  padding: 8px 0;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background: var(--card);
-  border: 1px solid #262e38;
-  border-radius: 8px;
-  min-width: 180px;
-  box-shadow: 0 8px 16px rgba(0,0,0,.2);
-  z-index: 100;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 10px 14px;
-  color: var(--text);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.dropdown-content a:hover {
-  background: var(--chip);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Fix dropdown alignment */
-.dropdown {
-  position: relative;
-  display: inline-flex; /* inline-flex instead of inline-block */
-  align-items: center;  /* vertically align with other nav items */
-}
-
-.dropdown .dropbtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-weight: 600;
-  color: var(--text);
-  line-height: 1;
-  padding: 0; /* remove extra padding */
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%; /* align directly under "Projects" */
-  left: 0;
-  background: var(--card);
-  border: 1px solid #262e38;
-  border-radius: 8px;
-  min-width: 180px;
-  box-shadow: 0 8px 16px rgba(0,0,0,.2);
-  z-index: 100;
-}
-
-.dropdown-content a {
-  display: block;
-  padding: 10px 14px;
-  color: var(--text);
-  font-weight: 500;
-}
-
-.dropdown-content a:hover {
-  background: var(--chip);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
+    .sample{margin-top:16px}
+    .sample img{width:100%;border-radius:12px;border:1px solid var(--line);background:#0a1118}
+    .carousel{position:relative;overflow:hidden;border-radius:14px;background:#0a1118}
+    .track{display:flex;transition:transform .35s ease}
+    .slide{flex:0 0 100%;display:flex;justify-content:center;align-items:center;padding:8px}
+    .slide img{max-width:100%;max-height:62vh;object-fit:contain;border-radius:8px}
+    .navbtn{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:42px;height:42px;border:0;border-radius:50%;background:rgba(255,255,255,.85);color:#12202b;font-size:24px;cursor:pointer}
+    .prev{left:10px}.next{right:10px}
+    .dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+    .dots button{width:10px;height:10px;border:0;border-radius:50%;background:rgba(255,255,255,.45);padding:0}
+    .dots button.active{background:#fff}
+    .note{border-left:4px solid var(--green);padding:14px 16px;background:#13252d;border-radius:10px;color:var(--muted)}
+    footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--muted);margin-top:34px}
+    @media(max-width:900px){.hero-grid,.case-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.navlinks a:not(.cta){display:none}}
+    @media(max-width:640px){.grid,.grid.two,.proof{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}.container{padding:18px}h1{font-size:42px}}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="brand"><span class="dot"></span><span>Eric John N. Cruz</span></div>
-        <div class="navlinks">
-          <a href="index.html#about">About</a>
-          <a href="index.html#skills">Services</a>
-          <a href="index.html#experience">Experience</a>
-  <div class="dropdown">
-    <a href="#projects" class="dropbtn">Projects ▾</a>
-    <div class="dropdown-content">
-      <a href="Engineering.html">Engineering</a>
-      <a href="Marketing.html">Marketing</a>
-      <a href="Programming.html">Programming</a>
-    </div>
-  </div>
-          <a href="index.html#tools">Tools</a>
-          <a href="index.html#education">Education</a>
-          <a href="index.html#certs">Licenses</a>
-          <a href="index.html#contact" class="cta">Contact</a>
-        </div>
-      </nav>
-    </div>
-  </header>
-
-  <main class="container">
-    <div class="breadcrumb"><a href="index.html#projects">← Back to Projects</a></div>
-
-    <section>
-      <div class="section-title"><h2>Search Engine Optimization</h2></div>
-      <div class="card">
-        <p class="muted">Helping businesses grow by boosting online visibility and engagement.</p>
-        <ul class="list">
-          <li>Strengthen brand authority through citations, backlinks, and PR that improve search rankings.</li>
-          <li>Drive customer connections with tailored email campaigns that convert.</li>
-          <li>Keep websites relevant and competitive with consistent content updates and performance reviews.</li>
-        </ul>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="index.html"><span class="dot"></span><span>Eric John N. Cruz</span></a>
+      <div class="navlinks">
+        <a href="index.html#about">About</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="Engineering.html">Engineering</a>
+        <a href="Programming.html">Programming</a>
+        <a class="cta" href="index.html#contact">Contact</a>
       </div>
-    </section>
+    </nav>
+  </div>
+</header>
 
-    <section>
-      <div class="section-title"><h2>Samples</h2></div>
-        <article class="card">
-          <h3>Keyword Research & SEO Strategy</h3>
-            <!-- Carousel -->
-              <div class="carousel" data-carousel>
-                <button class="nav prev" aria-label="Previous image" data-prev>&lsaquo;</button>
-                  <div class="track" data-track>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20Table.png" alt="Keyword Research sample 1"></div>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Categorization%20Pie%20Chart.png" alt="Keyword Research sample 2"></div>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Categorization%20Table.png" alt="Keyword Research sample 3"></div>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Search%20Trends%20or%20Competitive%20Insight%201.jpg" alt="Keyword Research sample 4"></div>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Search%20Trends%20or%20Competitive%20Insight%202.jpg" alt="Keyword Research sample 5"></div>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Workflow%20Snapshot%201.jpg" alt="Keyword Research sample 6"></div>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Workflow%20Snapshot%202.jpg" alt="Keyword Research sample 7"></div>
-                  </div>
-                <button class="nav next" aria-label="Next image" data-next>&rsaquo;</button>
-                <div class="dots" data-dots></div>
-              </div>
-          <p class="muted">I specialize in identifying high-value keywords that balance search volume, difficulty, and relevance to the client’s goals. By analyzing data from tools like Ubersuggest, I build structured keyword lists and categorize them into primary, supporting, and local segments to drive both organic visibility and targeted traffic.</p>
-            <p class="muted">Data-Driven Insights – I extract, clean, and organize keyword data into actionable lists with search volume, difficulty, and location.</p>
-            <p class="muted">Strategic Categorization – I classify keywords into core business terms, supporting content opportunities, and local/geo-focused phrases, ensuring a full-funnel SEO approach.</p>
-            <p class="muted">Trend & Competitor Analysis – I track search trends over time and analyze competitors’ rankings to uncover gaps and opportunities.</p>
-            <p class="muted">Result-Oriented Planning – My research directly informs content strategy, link-building, and campaign planning, helping brands rank for terms that bring real traffic and conversions.</p>
-        </article>
-    </section>
-    
-    <section>
-        <article class="card">
-          <h3>Data Researching for Content</h3>
-            <!-- Carousel -->
-              <div class="carousel" data-carousel>
-                <button class="nav prev" aria-label="Previous image" data-prev>&lsaquo;</button>
-                  <div class="track" data-track>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Basecamp%20project%20profile..png" alt="Basecamp project profile"></div>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Audience%20Identification.png" alt="sample work 1"></div>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Screenshot%20of%20structured%20ChatGPT%20prompt%20%2B%20sample%20output%201.png" alt="sample work 2"></div>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Screenshot%20of%20structured%20ChatGPT%20prompt%20%2B%20sample%20output%202.png" alt="sample work 3"></div>
-                  </div>
-                <button class="nav next" aria-label="Next image" data-next>&rsaquo;</button>
-                <div class="dots" data-dots></div>
-              </div>
-              <p class="muted">Validated, data-driven facts form the foundation for stronger content creation, helping businesses establish credibility, improve SEO visibility, and provide content teams with ready-to-use insights. This process ensures research is SEO-aligned, content remains relatable to the target audience, facts are reliable and numerical, and raw data is efficiently transformed into ready-to-publish assets.</p>
-        </article>
-    </section>
-
-    <section>
-        <article class="card">
-          <h3>Content Creation for SEO Campaigns</h3>
-            <!-- Carousel -->
-              <div class="carousel" data-carousel>
-                <button class="nav prev" aria-label="Previous image" data-prev>&lsaquo;</button>
-                  <div class="track" data-track>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Workflow%20Diagram%20%20Process%20Flow.png" alt="Workflow Diagram Process Flow.png"></div>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Final%20Content%20Snapshot%20(2).png" alt="Final Content Snapshot (2).png"></div>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Final%20Content%20Snapshot.png" alt="Final Content Snapshot.png"></div>
-                    <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Workflow%20Diagram%20%20Process%20Flow%202.png" alt="Workflow Diagram Process Flow 2.png"></div>
-                  </div>
-                <button class="nav next" aria-label="Next image" data-next>&rsaquo;</button>
-                <div class="dots" data-dots></div>
-              </div>
-          <p class="muted">I help businesses boost SEO performance by creating keyword-focused, credible content that improves visibility and engagement. Using structured research, keyword tools, and AI-driven drafting, I streamline the entire process from onboarding research and template preparation to keyword checks, AI prompting, review, and finalization so content is optimized, polished, and ready to publish.</p>
-        </article>
-    </section>
+<main class="container">
+  <section class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">SEO & Digital Operations</span>
+        <h1>Real workflow, real implementation, no invented metrics.</h1>
+        <p class="lead">My SEO work covers keyword research, content and website updates, citations/backlinks, press-release coordination, monthly reviews, reporting, research, and team workflow. This page pairs that professional experience with a live independent practice site where I can implement and verify SEO work directly.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://engineericjohncruz.github.io/.portfolio/islaclean/" target="_blank" rel="noopener">Open IslaClean live ↗</a>
+          <a class="btn" href="#practice-project">View the case study</a>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <span class="pill">Evidence-first portfolio</span>
+        <h3 style="margin-top:14px">What you can inspect</h3>
+        <ul>
+          <li>A live, browseable multi-page HTML/CSS/JS website.</li>
+          <li>Separate service pages built around search intent.</li>
+          <li>Unique metadata, H1s, internal links, and local structure.</li>
+          <li>Demo CTA and form events pushed to <code>dataLayer</code>.</li>
+          <li>Transparent practice-project labeling instead of fake client claims.</li>
+        </ul>
+      </aside>
     </div>
-  </main>
+  </section>
 
-  <footer>
-    <div class="container">
-      <div>© 2025 Eric John N. Cruz</div>
-      <div style="margin-top:6px">Coded from scratch using HTML, CSS, and JavaScript.</div>
+  <section id="practice-project">
+    <div class="case">
+      <div class="case-grid">
+        <div>
+          <span class="eyebrow" style="color:#1f6f5c;background:#e3f1ec;border-color:#cce5dc">Independent practice project</span>
+          <h2 style="margin-top:16px">IslaClean Palawan</h2>
+          <p>A fictional Puerto Princesa home-cleaning brand built specifically to demonstrate end-to-end SEO workflow. The project is not presented as client work. It gives me a controlled site where I can make changes, audit them, test a conversion path, and explain the decisions behind the implementation.</p>
+          <div class="actions">
+            <a class="btn primary" href="https://engineericjohncruz.github.io/.portfolio/islaclean/" target="_blank" rel="noopener">Browse the website ↗</a>
+            <a class="btn" href="https://engineericjohncruz.github.io/.portfolio/islaclean/about.html" target="_blank" rel="noopener">How the project was built</a>
+          </div>
+        </div>
+        <div class="proof">
+          <div><strong>10 pages</strong><span>Home, services, three service pages, service area, about, blog, article, contact.</span></div>
+          <div><strong>Intent separation</strong><span>Routine, deep, move-in/out, local, and informational content are not collapsed into one page.</span></div>
+          <div><strong>Technical basics</strong><span>Unique titles/descriptions, one primary H1 per page, canonical URLs, responsive layout.</span></div>
+          <div><strong>Measurement practice</strong><span>CTA clicks and demo form submissions emit structured <code>dataLayer</code> events.</span></div>
+        </div>
+      </div>
+      <div class="note" style="margin-top:24px;background:#fff7f0;border-left-color:#d97858;color:#6c554d">The site remains intentionally <strong>noindex</strong> because IslaClean is a fictional business. The goal is implementation evidence, not pretending to rank or collect leads.</div>
     </div>
-  </footer>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div><span class="eyebrow">Professional overlap</span><h2>SEO work I already handle</h2></div>
+      <p>These are presented as work areas rather than inflated outcome claims. I prefer showing the process and evidence a recruiter can inspect.</p>
+    </div>
+    <div class="grid">
+      <article class="card"><span class="pill">Research</span><h3 style="margin-top:12px">Keyword & content research</h3><p>Keyword discovery, categorization, search-trend and competitor checks, content research, and organizing findings into usable recommendations.</p></article>
+      <article class="card"><span class="pill">Execution</span><h3 style="margin-top:12px">Website & SEO updates</h3><p>Website content updates, internal/external linking, on-page cleanup, citations, backlinks, press-release coordination, and recurring SEO updates.</p></article>
+      <article class="card"><span class="pill">Operations</span><h3 style="margin-top:12px">Reporting & workflow</h3><p>Monthly reviews, client-data checks, report generation, task delegation, onboarding, training guides, research support, and team communication.</p></article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div><span class="eyebrow">Work samples</span><h2>Research and content workflow</h2></div>
+      <p>Existing samples from my portfolio repository are kept here as supporting material rather than being presented as a substitute for live implementation.</p>
+    </div>
+
+    <div class="grid two">
+      <article class="card">
+        <h3>Keyword Research & SEO Strategy</h3>
+        <div class="carousel sample" data-carousel>
+          <button class="navbtn prev" aria-label="Previous image" data-prev>&lsaquo;</button>
+          <div class="track" data-track>
+            <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20Table.png" alt="Keyword research table"></div>
+            <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Categorization%20Pie%20Chart.png" alt="Keyword categorization chart"></div>
+            <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Categorization%20Table.png" alt="Keyword categorization table"></div>
+            <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Keyword%20Research%20-%20Search%20Trends%20or%20Competitive%20Insight%201.jpg" alt="Search trend analysis sample"></div>
+          </div>
+          <button class="navbtn next" aria-label="Next image" data-next>&rsaquo;</button>
+          <div class="dots" data-dots></div>
+        </div>
+        <p>I organize keyword data by intent, relevance, opportunity, and local/contextual use so it can feed content planning rather than sit as an isolated spreadsheet.</p>
+      </article>
+
+      <article class="card">
+        <h3>SEO Content Research & Drafting Workflow</h3>
+        <div class="carousel sample" data-carousel>
+          <button class="navbtn prev" aria-label="Previous image" data-prev>&lsaquo;</button>
+          <div class="track" data-track>
+            <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Audience%20Identification.png" alt="Audience identification sample"></div>
+            <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Workflow%20Diagram%20%20Process%20Flow.png" alt="Content workflow process"></div>
+            <div class="slide"><img src="https://raw.githubusercontent.com/engineericjohncruz/portfolio/refs/heads/main/Final%20Content%20Snapshot.png" alt="Final content sample"></div>
+          </div>
+          <button class="navbtn next" aria-label="Next image" data-next>&rsaquo;</button>
+          <div class="dots" data-dots></div>
+        </div>
+        <p>Research, audience context, keyword checks, structured AI-assisted drafting, manual review, and finalization are treated as a workflow, not as “AI writes the content.”</p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <div><span class="eyebrow">Tools</span><h2>Tools and implementation</h2></div>
+      <p>I separate tools I have actually used from tools I would need to ramp into instead of claiming experience I do not have.</p>
+    </div>
+    <div class="grid">
+      <article class="card"><h3>SEO & analytics</h3><p>Google Analytics, Ubersuggest, Woorank, keyword research, content/website review, and reporting workflows.</p></article>
+      <article class="card"><h3>Web implementation</h3><p>HTML, CSS, JavaScript, website content updates, responsive page structure, internal linking, metadata, and basic conversion-event handling.</p></article>
+      <article class="card"><h3>Operations</h3><p>Google Workspace, Microsoft Office, ClickUp, Basecamp, Slack, Canva, documentation, onboarding, SOPs, and async team coordination.</p></article>
+    </div>
+  </section>
+
+  <section>
+    <div class="note"><strong>Portfolio standard:</strong> no fabricated rankings, traffic growth, client names, reviews, conversion figures, or tool experience. When something is a practice project, it is labeled as a practice project.</div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    © 2026 Eric John N. Cruz · SEO, Digital Operations & Engineering Portfolio
+  </div>
+</footer>
 
 <script>
 (function(){
-  const carousels = document.querySelectorAll('[data-carousel]');
-  carousels.forEach(initCarousel);
-
-  function initCarousel(root){
-    const track   = root.querySelector('[data-track]');
-    const slides  = Array.from(track.children);   // .slide elements
-    const prev    = root.querySelector('[data-prev]');
-    const next    = root.querySelector('[data-next]');
-    const dotsWrap= root.querySelector('[data-dots]');
-    let index = 0, startX = 0, deltaX = 0;
-
-    // Build dots
-    slides.forEach((_, i)=>{
-      const b = document.createElement('button');
-      b.setAttribute('aria-label', 'Go to slide ' + (i+1));
-      b.addEventListener('click', ()=>go(i));
-      dotsWrap.appendChild(b);
+  document.querySelectorAll('[data-carousel]').forEach(root=>{
+    const track=root.querySelector('[data-track]');
+    const slides=[...track.children];
+    const prev=root.querySelector('[data-prev]');
+    const next=root.querySelector('[data-next]');
+    const dots=root.querySelector('[data-dots]');
+    let index=0;
+    slides.forEach((_,i)=>{
+      const b=document.createElement('button');
+      b.setAttribute('aria-label','Go to slide '+(i+1));
+      b.addEventListener('click',()=>go(i));
+      dots.appendChild(b);
     });
-
-    // Set the blurred background to the current slide image
-    function setBg(){
-      const img = slides[index].querySelector('img') || slides[index];
-      const url = img && img.getAttribute('src');
-      if (url) root.style.setProperty('--bg-url', `url("${url}")`);
-    }
-
+    function go(i){index=(i+slides.length)%slides.length;update()}
     function update(){
-      track.style.transform = `translateX(-${index*100}%)`;
-      // dots
-      const dots = [...dotsWrap.children];
-      dots.forEach((d,i)=>d.classList.toggle('active', i===index));
-      // blur background
-      setBg();
+      track.style.transform='translateX(-'+(index*100)+'%)';
+      [...dots.children].forEach((d,i)=>d.classList.toggle('active',i===index));
     }
-
-    function go(i){
-      index = (i + slides.length) % slides.length;
-      update();
-    }
-
-    prev.addEventListener('click', ()=>go(index-1));
-    next.addEventListener('click', ()=>go(index+1));
-
-    // Touch swipe
-    track.addEventListener('touchstart', e=>{ startX = e.touches[0].clientX; deltaX = 0; }, {passive:true});
-    track.addEventListener('touchmove',  e=>{ deltaX = e.touches[0].clientX - startX; }, {passive:true});
-    track.addEventListener('touchend',   ()=>{
-      if (Math.abs(deltaX) > 40) deltaX < 0 ? go(index+1) : go(index-1);
-      deltaX = 0;
-    });
-
-    window.addEventListener('resize', update);
-
-    // init
-    if (dotsWrap.firstElementChild) dotsWrap.firstElementChild.classList.add('active');
+    prev.addEventListener('click',()=>go(index-1));
+    next.addEventListener('click',()=>go(index+1));
     update();
-  }
+  });
 })();
 </script>
-
 </body>
 </html>
