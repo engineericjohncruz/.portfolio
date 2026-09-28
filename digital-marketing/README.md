@@ -17,3 +17,6 @@ SEO, digital marketing, marketing operations, and digital operations.
 
 ## Sources used to build this portfolio
 Relevant existing resume/project files, personal Google Drive work summaries and reporting documents, existing GitHub portfolio assets, and the live IslaClean practice project.
+
+## Source-account restriction
+Google Drive review for this build was restricted to the user's personal account, **cruzericjohn@gmail.com**. The separate SEO Leads Google Drive connection was not used.
