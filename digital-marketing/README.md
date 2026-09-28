@@ -1,6 +1,6 @@
 # Eric John Cruz — SEO & Digital Operations Portfolio
 
-Dedicated digital marketing portfolio, separate from the master multidisciplinary portfolio.
+Dedicated portfolio focused on SEO, digital marketing, website implementation, AI-assisted workflows, reporting, and digital operations.
 
 ## Public URL
 https://engineericjohncruz.github.io/.portfolio/digital-marketing/
